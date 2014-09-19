@@ -156,8 +156,22 @@ function computerMove(){
 	//if we get here then the computer hasn't moved yet
 		//because none of the winning combinations are in jeopardy of being filled
 	//if empty, move to the middle of the board to prevent a tricky player
+		//if center is taken then go for the first corner position
+	//if corners are taken then go for the first empty square
 	if (board[4] == 0){
 		computerMoveHere(4);
+		return true; //stop the loop because we moved already
+	}else if(board[0] == 0){
+		computerMoveHere(0);
+		return true; //stop the loop because we moved already
+	}else if(board[2] == 0){ 
+		computerMoveHere(2);
+		return true; //stop the loop because we moved already
+	}else if(board[6] == 0){ 
+		computerMoveHere(6);
+		return true; //stop the loop because we moved already
+	}else if(board[8] == 0){ 
+		computerMoveHere(8);
 		return true; //stop the loop because we moved already
 	}else{ //other wise move to the first empty spot
 		computerMoveHere(board.indexOf(0));
