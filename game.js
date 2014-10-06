@@ -54,7 +54,9 @@ function computerMove(){
 	      	return true; //stop the loop because we moved already
       	}
       }else if(playerWinCount == 2){
+
       	moveHere = findZero(winningCombinations[i], board);
+
       	if (moveHere !== false){
       		computerMoveHere(moveHere);
       		return true; //stop the loop because we moved already
@@ -83,6 +85,9 @@ function computerMove(){
 		computerMoveHere(goHere);
 	}else if ((board[2] == 1) && (board[6] == 1) && (goHere !== false)){
 		computerMoveHere(goHere);
+	}else if ((board[5] == 1) && (board[6] == 1) && (moveCount == 3) && (goHere !== false)){
+		computerMoveHere(8);
+		return true; //stop the loop because we moved already
 	}else if (board[4] == 0){
 		computerMoveHere(4);
 		return true; //stop the loop because we moved already
